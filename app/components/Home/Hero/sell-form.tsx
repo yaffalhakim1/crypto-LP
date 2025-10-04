@@ -38,7 +38,11 @@ const SellCrypto = () => {
   ) => {
     const { name, value } = e.target;
     if (name === 'amount') {
-      setFormData((prevData) => ({ ...prevData, amount: value }));
+      // Prevent negative values and zero
+      const numValue = parseFloat(value);
+      if (value === '' || (numValue >= 0.01 && !isNaN(numValue))) {
+        setFormData((prevData) => ({ ...prevData, amount: value }));
+      }
     }
   };
 
@@ -61,10 +65,10 @@ const SellCrypto = () => {
     setLoading(true);
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      toast.success('Crypto purchase successful!');
+      toast.success('Crypto sale successful!');
       setFormData((prevData) => ({ ...prevData, amount: '' }));
     } catch (error) {
-      toast.error('An error occurred during the purchase.');
+      toast.error('An error occurred during the sale.');
       console.error(error);
     } finally {
       setLoading(false);
@@ -138,7 +142,8 @@ const SellCrypto = () => {
             placeholder='Amount'
             value={formData.amount}
             onChange={handleChange}
-            min='0'
+            min='0.01'
+            step='0.01'
             required
             className='w-full px-3 py-2 text-white bg-transparent border rounded-md border-dark_border/60 focus:border-primary focus-visible:outline-0'
           />

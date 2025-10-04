@@ -36,7 +36,7 @@ const Hero = () => {
   );
 
   useEffect(() => {
-    if (isClient && typeof window !== 'undefined') {
+    if (isClient) {
       document.addEventListener('mousedown', handleClickOutside);
       return () => {
         document.removeEventListener('mousedown', handleClickOutside);
@@ -45,9 +45,20 @@ const Hero = () => {
   }, [handleClickOutside, isClient]);
 
   useEffect(() => {
-    if (isClient && typeof window !== 'undefined') {
-      document.body.style.overflow = isBuying || isSelling ? 'hidden' : '';
+    if (isClient) {
+      if (isBuying || isSelling) {
+        document.body.classList.add('modal-open');
+      } else {
+        document.body.classList.remove('modal-open');
+      }
     }
+
+    // Cleanup on unmount
+    return () => {
+      if (isClient) {
+        document.body.classList.remove('modal-open');
+      }
+    };
   }, [isBuying, isSelling, isClient]);
 
   const fadeInAnimation = {
@@ -133,12 +144,12 @@ const Hero = () => {
               >
                 <button
                   onClick={() => setIsBuyingOpen(false)}
-                  className='absolute top-0 right-0 mt-8 mr-8 dark:invert'
+                  className='absolute top-0 right-0 mt-8 mr-8 p-2 text-white hover:text-primary transition-colors'
                   aria-label='Close Buy Modal'
                 >
-                  <span className='inline-block text-white hover:text-primary text-24 me-2'>
-                    ×
-                  </span>
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </button>
                 <BuyCrypto />
               </div>
@@ -152,12 +163,12 @@ const Hero = () => {
               >
                 <button
                   onClick={() => setIsSellingOpen(false)}
-                  className='absolute top-0 right-0 mt-8 mr-8 dark:invert'
+                  className='absolute top-0 right-0 mt-8 mr-8 p-2 text-white hover:text-primary transition-colors'
                   aria-label='Close Sell Modal'
                 >
-                  <span className='inline-block text-white hover:text-primary text-24 me-2'>
-                    ×
-                  </span>
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </button>
                 <SellCrypto />
               </div>

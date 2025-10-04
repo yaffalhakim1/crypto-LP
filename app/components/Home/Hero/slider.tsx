@@ -25,15 +25,18 @@ const CardSlider = ({
   const [slidesToShow, setSlidesToShow] = useState(4);
 
   useEffect(() => {
+    // Only run on client
+    if (typeof window === 'undefined') return;
     setIsClient(true);
 
     // Set initial slides based on window width
     const updateSlidesToShow = () => {
-      if (window.innerWidth < 768) {
+      const width = window.innerWidth;
+      if (width < 768) {
         setSlidesToShow(1);
-      } else if (window.innerWidth < 992) {
+      } else if (width < 992) {
         setSlidesToShow(2);
-      } else if (window.innerWidth < 1200) {
+      } else if (width < 1200) {
         setSlidesToShow(3);
       } else {
         setSlidesToShow(4);

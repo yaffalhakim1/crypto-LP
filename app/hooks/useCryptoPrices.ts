@@ -111,7 +111,7 @@ export function useCryptoPrices(): UseCryptoPricesResult {
   // Initial fetch
   useEffect(() => {
     fetchPrices();
-  }, []);
+  }, [fetchPrices]);
 
   // Set up interval for real-time updates
   useEffect(() => {
@@ -120,7 +120,7 @@ export function useCryptoPrices(): UseCryptoPricesResult {
     }, REFRESH_INTERVAL);
 
     return () => clearInterval(interval);
-  }, [fetchPrices]);
+  }, []);
 
   return {
     prices,

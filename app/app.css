@@ -281,3 +281,8 @@ section {
     animation-duration: 15s;
   }
 }
+
+/* Modal overflow handling */
+.modal-open {
+  overflow: hidden;
+}
