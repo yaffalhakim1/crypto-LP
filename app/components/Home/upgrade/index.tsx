@@ -1,12 +1,17 @@
 import { upgradeData } from '../../../data'
 import { Icon } from '@iconify/react'
+import { motion } from 'framer-motion'
 
 const Upgrade = () => {
   return (
     <section className='py-20' id='upgrade'>
       <div className='container px-4'>
         <div className='grid lg:grid-cols-2 gap-10 items-center'>
-          <div>
+          <motion.div
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <p className='text-white font-medium'>Crypgo <span className='text-primary'>upgrade</span></p>
             <h2 className='text-white sm:text-40 text-30  font-medium mb-5'>
               Upgrade your crypto business
@@ -32,8 +37,12 @@ const Upgrade = () => {
                 </div>
               ))}
             </div>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <div className='ml-0 lg:ml-7'>
               <img
                 src='/images/upgrade/img-upgrade.png'
@@ -43,7 +52,7 @@ const Upgrade = () => {
                 className='-mr-5'
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

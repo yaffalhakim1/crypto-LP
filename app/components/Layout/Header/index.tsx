@@ -1,5 +1,4 @@
 import { Link } from 'react-router';
-import { useLocation } from 'react-router';
 import { useEffect, useRef, useState } from 'react';
 import Logo from './Logo';
 import HeaderLink from '../Header/Navigation/HeaderLink';
@@ -10,14 +9,9 @@ import { headerData } from './Navigation/menuData';
 import { ShimmerButton } from '~/components/Common/ShimmerButton';
 
 const Header: React.FC = () => {
-  const location = useLocation();
-  const pathUrl = location.pathname;
-  const { theme, setTheme } = useTheme();
-
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
 
-  const navbarRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
@@ -67,7 +61,7 @@ const Header: React.FC = () => {
           </nav>
           <div className='hidden lg:block'>
             <Link
-              to={'https://calendly.com/'}
+              to={'https://play.google.com/store/apps'}
               target='_blank'
               rel='noopener noreferrer'
             >
@@ -112,12 +106,11 @@ const Header: React.FC = () => {
             ))}
             <div className='w-full py-4 mt-4 border-t border-white/10'>
               <Link
-                to='https://play.google.com/store/apps'
+                to={'https://play.google.com/store/apps'}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center justify-center w-full py-3 text-white transition-colors rounded-lg bg-primary hover:bg-primary/80'
               >
-                Try Free Now
+                <ShimmerButton>Try Free Now</ShimmerButton>
               </Link>
             </div>
           </nav>

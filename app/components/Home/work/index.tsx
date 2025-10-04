@@ -6,16 +6,10 @@ const Work = () => {
   const ref = useRef(null);
   const inView = useInView(ref);
 
-  const TopAnimation = {
-    initial: { y: '-100%', opacity: 0 },
-    animate: inView ? { y: 0, opacity: 1 } : { y: '-100%', opacity: 0 },
-    transition: { duration: 0.6, delay: 0.4 },
-  };
-
-  const bottomAnimation = {
-    initial: { y: '100%', opacity: 0 },
-    animate: inView ? { y: 0, opacity: 1 } : { y: '100%', opacity: 0 },
-    transition: { duration: 0.6, delay: 0.4 },
+  const fadeInAnimation = {
+    initial: { opacity: 0 },
+    animate: inView ? { opacity: 1 } : { opacity: 0 },
+    transition: { duration: 0.8, delay: 0.4 },
   };
 
   const services = [
@@ -38,7 +32,7 @@ const Work = () => {
       <div className='container px-4 mx-auto lg:max-w-(--breakpoint-xl)'>
         <div ref={ref} className='grid grid-cols-12 items-center'>
           <motion.div
-            {...bottomAnimation}
+            {...fadeInAnimation}
             className='lg:col-span-7 col-span-12'
           >
             <div className='flex flex-col gap-3'>
@@ -67,7 +61,7 @@ const Work = () => {
               ))}
             </div>
           </motion.div>
-          <motion.div {...TopAnimation} className='lg:col-span-5 col-span-12'>
+          <motion.div {...fadeInAnimation} className='lg:col-span-5 col-span-12'>
             <div className='2xl:-mr-40 mt-9 flex justify-center'>
               <BetterImage
                 src='/images/work/img-work-with-us.png'

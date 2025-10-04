@@ -7,19 +7,19 @@ const TimeLine = () => {
   const ref = useRef(null);
   const inView = useInView(ref);
 
-  const TopAnimation = {
-    initial: { y: '-100%', opacity: 0 },
-    animate: inView ? { y: 0, opacity: 1 } : { y: '-100%', opacity: 0 },
-    transition: { duration: 0.6, delay: 0.4 },
+  const fadeInAnimation = {
+    initial: { opacity: 0 },
+    animate: inView ? { opacity: 1 } : { opacity: 0 },
+    transition: { duration: 0.8, delay: 0.4 },
   };
   return (
     <section className='md:pt-40 pt-9' id='development'>
       <div className='container px-4 lg:px-16'>
         <div className='text-center'>
           <motion.div
-            whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: '-100%', opacity: 0 }}
-            transition={{ duration: 0.6 }}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
           >
             <div className='flex flex-col gap-4'>
               <p className='font-medium text-white'>
@@ -32,9 +32,9 @@ const TimeLine = () => {
             </div>
           </motion.div>
           <motion.div
-            whileInView={{ scale: 1, opacity: 1 }}
-            initial={{ scale: 0.8, opacity: 0 }}
-            transition={{ duration: 0.6 }}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className='relative hidden md:block'>
               <div>

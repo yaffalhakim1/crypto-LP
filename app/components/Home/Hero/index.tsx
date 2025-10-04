@@ -51,17 +51,11 @@ const Hero = () => {
     }
   }, [isBuying, isSelling, isClient]);
 
-  const leftAnimation = {
-    initial: { x: '-100%', opacity: 0 },
-    animate: { x: 0, opacity: 1 },
-    exit: { x: '-100%', opacity: 0 },
-    transition: { duration: 0.6 },
-  };
-  const rightAnimation = {
-    initial: { x: '100%', opacity: 0 },
-    animate: { x: 0, opacity: 1 },
-    exit: { x: '100%', opacity: 0 },
-    transition: { duration: 0.6 },
+  const fadeInAnimation = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+    transition: { duration: 0.8 },
   };
 
   return (
@@ -71,7 +65,7 @@ const Hero = () => {
     >
       <div className='container'>
         <div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
-          <motion.div {...leftAnimation} className='flex flex-col gap-10'>
+          <motion.div {...fadeInAnimation} className='flex flex-col gap-10'>
             <div className='flex flex-col gap-4 text-center md:text-left'>
               <div className='flex items-center justify-center gap-6 lg:justify-start'>
                 {/* <div className='py-1.5 px-4 bg-primary/10 rounded-full border border-white/10'>
@@ -124,7 +118,7 @@ const Hero = () => {
               </Link>
             </div>
           </motion.div>
-          <motion.div {...rightAnimation} className=''>
+          <motion.div {...fadeInAnimation} className=''>
             <div className='w-full h-full'>
               <img
                 src='/images/hero/hero-banner-img.png'

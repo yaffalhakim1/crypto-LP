@@ -7,9 +7,9 @@ const Portfolio = () => {
       <div className='container px-4 sm:px-6'>
         <div className='grid items-center gap-20 lg:grid-cols-2'>
           <motion.div
-            whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: '-100%', opacity: 0 }}
-            transition={{ duration: 0.6 }}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
             className='lg:-ml-32'
           >
             <img
@@ -21,9 +21,9 @@ const Portfolio = () => {
           </motion.div>
 
           <motion.div
-            whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: '100%', opacity: 0 }}
-            transition={{ duration: 0.6 }}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className='flex flex-col gap-4'>
               <h2 className='mb-4 font-medium text-white sm:text-40 text-30'>
@@ -31,7 +31,7 @@ const Portfolio = () => {
               </h2>
             </div>
             <p className='text-muted/60 text-18'>
-              Coinbase has a variety of features that make it the best place to
+              Crypgo has a variety of features that make it the best place to
               start trading.
             </p>
 

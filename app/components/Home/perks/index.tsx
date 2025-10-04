@@ -1,25 +1,40 @@
-import { perksData } from '../../../data'
-import BetterImage from '../../Common/BetterImage'
+import { perksData } from '../../../data';
+import BetterImage from '../../Common/BetterImage';
+import { motion } from 'framer-motion';
 
 const Perks = () => {
   return (
-    <section className='pb-28 relative'>
-      <div className='container px-4 relative z-2'>
+    <section className='relative pb-28'>
+      <div className='container relative px-4 z-2'>
         <div className='text-center'>
-          <div className='flex flex-col gap-4'>
-            <p className="text-muted text-base relative">
+          <motion.div
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className='flex flex-col gap-4'
+          >
+            <p className='relative text-base text-muted'>
               Always By <span className='text-primary'>your side</span>
             </p>
-            <h2 className='text-white sm:text-40 text-30 font-medium'>
-              Be the first to use our Cryogo!
+            <h2 className='font-medium text-white sm:text-40 text-30'>
+              Be the first to use our Crypgo!
             </h2>
-          </div>
-          <div className='mt-16 border border-border/20 grid lg:grid-cols-3 sm:grid-cols-2 py-16 gap-10 px-20 rounded-3xl sm:bg-perk bg-dark_grey/35 lg:bg-bottom bg-center bg-no-repeat'>
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className='grid gap-10 px-20 py-16 mt-16 bg-center bg-no-repeat border border-border/20 lg:grid-cols-3 sm:grid-cols-2 rounded-3xl sm:bg-perk bg-dark_grey/35 lg:bg-bottom'
+          >
             {perksData.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
-                className='text-center flex items-center justify-end flex-col'>
-                <div className='bg-primary/25 backdrop-blur-xs p-4 rounded-full w-fit'>
+                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 * index }}
+                className='flex flex-col items-center justify-end text-center'
+              >
+                <div className='p-4 rounded-full bg-primary/25 backdrop-blur-xs w-fit'>
                   <BetterImage
                     src={item.icon}
                     alt={item.title}
@@ -35,14 +50,14 @@ const Perks = () => {
                   className='text-muted/60'
                   dangerouslySetInnerHTML={{ __html: item.text }}
                 />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
-      <div className='bg-linear-to-br from-tealGreen to-charcoalGray sm:w-50 w-96 z-0 sm:h-50 h-96 rounded-full sm:-bottom-80 bottom-0 blur-400 absolute sm:-left-48 opacity-60'></div>
+      <div className='absolute bottom-0 z-0 rounded-full bg-linear-to-br from-tealGreen to-charcoalGray sm:w-50 w-96 sm:h-50 h-96 sm:-bottom-80 blur-400 sm:-left-48 opacity-60'></div>
     </section>
-  )
-}
+  );
+};
 
-export default Perks
+export default Perks;
