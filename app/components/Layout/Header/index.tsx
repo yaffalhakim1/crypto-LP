@@ -112,7 +112,7 @@ const Header: React.FC = () => {
             ))}
             <div className='w-full py-4 mt-4 border-t border-white/10'>
               <Link
-                to='https://calendly.com/'
+                to='https://play.google.com/store/apps'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='flex items-center justify-center w-full py-3 text-white transition-colors rounded-lg bg-primary hover:bg-primary/80'

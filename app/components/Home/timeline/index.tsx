@@ -25,7 +25,7 @@ const TimeLine = () => {
               <p className='font-medium text-white'>
                 Our <span className='text-primary'>trading process</span>
               </p>
-              <h2 className='text-white sm:text-40 text-30 font-medium lg:w-80% mx-auto mb-20'>
+              <h2 className='text-white sm:text-40 text-28 font-medium lg:w-80% mx-auto mb-12'>
                 Simple steps to start trading cryptocurrencies securely and
                 efficiently
               </h2>
@@ -119,21 +119,21 @@ const TimeLine = () => {
                 </div>
               </div>
             </div>
-            <div className='grid gap-8 sm:grid-cols-2 md:hidden'>
+            <div className='grid gap-6 sm:grid-cols-2 md:hidden'>
               {timelineData.map((item, index) => (
-                <div key={index} className='flex items-center gap-6'>
-                  <div className='p-6 rounded-full bg-light_grey/45'>
+                <div key={index} className='flex items-center gap-4'>
+                  <div className='p-4 rounded-full bg-light_grey/45'>
                     <BetterImage
                       src={item.icon}
                       alt={item.title}
-                      width={44}
-                      height={44}
+                      width={36}
+                      height={36}
                       quality={95}
                     />
                   </div>
                   <div className='text-start'>
-                    <h4 className='mb-2 text-28 text-muted'>{item.title}</h4>
-                    <p className='text-muted/60 text-18'>{item.text}</p>
+                    <h4 className='mb-1 text-20 text-muted'>{item.title}</h4>
+                    <p className='text-muted/60 text-16'>{item.text}</p>
                   </div>
                 </div>
               ))}

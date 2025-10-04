@@ -32,7 +32,7 @@ const GlobalReach = () => {
                   )}
                   {item.postfix && item.postfix}
                 </h3>
-                <p className='dark:text-white/80'>{item.title}</p>
+                <p className='text-gray-800 dark:text-white/80'>{item.title}</p>
               </div>
             );
           })}
