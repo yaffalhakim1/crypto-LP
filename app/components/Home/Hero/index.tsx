@@ -68,11 +68,6 @@ const Hero = () => {
           <motion.div {...fadeInAnimation} className='flex flex-col gap-10'>
             <div className='flex flex-col gap-4 text-center md:text-left'>
               <div className='flex items-center justify-center gap-6 lg:justify-start'>
-                {/* <div className='py-1.5 px-4 bg-primary/10 rounded-full border border-white/10'>
-                  <span className='font-medium text-primary'>
-                    Future of crypto trading
-                  </span>
-                </div> */}
                 <div
                   className={cn(
                     'group rounded-full border border-black/5 bg-primary/10 text-base text-white transition-all ease-in hover:cursor-pointer '
@@ -91,23 +86,7 @@ const Hero = () => {
                 features on Crypgo's cutting-edge platform.
               </p>
             </div>
-            {/* <div className='flex items-center justify-center gap-8 md:justify-start'>
-              <Link
-                to={'/#work'}
-                className='flex items-center gap-2 py-3 font-semibold border rounded-lg cursor-pointer bg-primary hover:bg-primary/80 border-primary text-darkmode px-7'
-              >
-                Explore More
-                <img
-                  src={'/images/icons/icon-arrow.svg'}
-                  alt='arrow-icon'
-                  width={20}
-                  height={20}
-                  className='inline-block'
-                  loading='eager'
-                  decoding='async'
-                />
-              </Link>
-            </div> */}
+
             <div className='flex items-center justify-center gap-8 md:justify-start'>
               <Link to={'/#work'}>
                 <ShimmerButton>
@@ -156,10 +135,6 @@ const Hero = () => {
                   className='absolute top-0 right-0 mt-8 mr-8 dark:invert'
                   aria-label='Close Buy Modal'
                 >
-                  {/* <Icon
-                    icon='tabler:currency-xrp'
-                    className='inline-block text-white hover:text-primary text-24 me-2'
-                  /> */}
                   <span className='inline-block text-white hover:text-primary text-24 me-2'>
                     ×
                   </span>
@@ -179,10 +154,6 @@ const Hero = () => {
                   className='absolute top-0 right-0 mt-8 mr-8 dark:invert'
                   aria-label='Close Sell Modal'
                 >
-                  {/* <Icon
-                    icon='tabler:currency-xrp'
-                    className='inline-block text-white hover:text-primary text-24 me-2'
-                  /> */}
                   <span className='inline-block text-white hover:text-primary text-24 me-2'>
                     ×
                   </span>
