@@ -36,6 +36,54 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+export const meta: Route.MetaFunction = () => {
+  return [
+    { title: 'Crypgo - Fast and Secure Cryptocurrency Exchange' },
+    {
+      name: 'description',
+      content:
+        "Trade cryptocurrencies with ease, security, and advanced features on Crypgo's cutting-edge platform. Lightning-fast execution and bank-level security.",
+    },
+
+    // Twitter Card meta tags
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:site', content: '@crypgo' },
+    { name: 'twitter:creator', content: '@crypgo' },
+    {
+      name: 'twitter:title',
+      content: 'Crypgo - Fast and Secure Cryptocurrency Exchange',
+    },
+    {
+      name: 'twitter:description',
+      content:
+        "Trade cryptocurrencies with ease, security, and advanced features on Crypgo's cutting-edge platform.",
+    },
+    { name: 'twitter:image', content: '/images/hero/hero-banner-img.png' },
+    {
+      name: 'twitter:image:alt',
+      content: 'Crypgo cryptocurrency trading platform',
+    },
+
+    // Open Graph meta tags (Facebook, LinkedIn, etc.)
+    {
+      property: 'og:title',
+      content: 'Crypgo - Fast and Secure Cryptocurrency Exchange',
+    },
+    {
+      property: 'og:description',
+      content:
+        "Trade cryptocurrencies with ease, security, and advanced features on Crypgo's cutting-edge platform.",
+    },
+    { property: 'og:image', content: '/images/hero/hero-banner-img.png' },
+    {
+      property: 'og:image:alt',
+      content: 'Crypgo cryptocurrency trading platform',
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://crypgo-lp.netlify.app/' },
+  ];
+};
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' suppressHydrationWarning>

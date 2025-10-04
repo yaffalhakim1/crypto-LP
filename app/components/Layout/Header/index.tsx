@@ -3,8 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Logo from './Logo';
 import HeaderLink from '../Header/Navigation/HeaderLink';
 import MobileHeaderLink from '../Header/Navigation/MobileHeaderLink';
-import { useTheme } from 'next-themes';
-import { Icon } from '@iconify/react/dist/iconify.js';
+
 import { headerData } from './Navigation/menuData';
 import { ShimmerButton } from '~/components/Common/ShimmerButton';
 
