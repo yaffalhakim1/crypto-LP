@@ -9,9 +9,18 @@ interface CardSliderProps {
   loading: boolean;
   error: string | null;
   onRetry: () => void;
+  onBuyClick?: () => void;
+  onSellClick?: () => void;
 }
 
-const CardSlider = ({ priceMap, loading, error, onRetry }: CardSliderProps) => {
+const CardSlider = ({
+  priceMap,
+  loading,
+  error,
+  onRetry,
+  onBuyClick,
+  onSellClick,
+}: CardSliderProps) => {
   const [isClient, setIsClient] = useState(false);
   const [slidesToShow, setSlidesToShow] = useState(4);
 
@@ -58,6 +67,22 @@ const CardSlider = ({ priceMap, loading, error, onRetry }: CardSliderProps) => {
         <h2 className='font-medium text-white sm:text-40 text-30'>
           Top crypto coins updates
         </h2>
+        {onBuyClick && onSellClick && (
+          <div className='flex justify-center gap-4 mt-6'>
+            <button
+              onClick={onBuyClick}
+              className='px-6 py-3 font-medium text-white transition-all rounded-xl bg-primary hover:bg-transparent hover:text-primary hover:cursor-pointer'
+            >
+              Buy Crypto
+            </button>
+            <button
+              onClick={onSellClick}
+              className='px-6 py-3 font-medium transition-all bg-transparent border rounded-xl text-primary border-primary hover:bg-primary hover:text-darkmode hover:cursor-pointer'
+            >
+              Sell Crypto
+            </button>
+          </div>
+        )}
       </div>
 
       {error && (

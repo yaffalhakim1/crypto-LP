@@ -14,7 +14,9 @@ function BrandLogo() {
             <div className='relative flex justify-center py-4 text-center'>
               <p className='font-medium text-white'>
                 Trusted by top{' '}
-                <span className='text-primary'>financial institutions</span>
+                <span className='font-semibold text-primary'>
+                  Financial Institutions
+                </span>
               </p>
             </div>
 

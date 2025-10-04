@@ -23,7 +23,7 @@ const TimeLine = () => {
           >
             <div className='flex flex-col gap-4'>
               <p className='font-medium text-white'>
-                Our <span className='text-primary'>trading process</span>
+                Our <span className='text-primary'>Trading Process</span>
               </p>
               <h2 className='text-white sm:text-40 text-28 font-medium lg:w-80% mx-auto mb-12'>
                 Simple steps to start trading cryptocurrencies securely and

@@ -9,7 +9,6 @@ import { useCryptoPrices } from '~/hooks/useCryptoPrices';
 import { ShimmerButton } from '~/components/Common/ShimmerButton';
 import { cn } from 'utils/cn';
 import { ShinyChip } from '~/components/Common/ShinnyChip';
-// import { Icon } from '@iconify/react';
 
 const Hero = () => {
   const [isClient, setIsClient] = useState(false);
@@ -117,6 +116,8 @@ const Hero = () => {
           loading={loading}
           error={error}
           onRetry={refetch}
+          onBuyClick={() => setIsBuyingOpen(true)}
+          onSellClick={() => setIsSellingOpen(true)}
         />
       </div>
 
