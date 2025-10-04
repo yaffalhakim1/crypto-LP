@@ -9,7 +9,7 @@ const GlobalReach = () => {
     threshold: 0.5,
   });
   return (
-    <section className='py-20 relative'>
+    <section className='relative py-20'>
       <div className='container'>
         <div className='relative h-[400px] md:h-[600px] mb-10'>
           <Globe />
@@ -32,7 +32,7 @@ const GlobalReach = () => {
                   )}
                   {item.postfix && item.postfix}
                 </h3>
-                <p className='text-gray-800 dark:text-white/80'>{item.title}</p>
+                <p className=' text-white/80'>{item.title}</p>
               </div>
             );
           })}
